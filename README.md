@@ -21,14 +21,15 @@ Runs on a schedule via GitHub Actions for free.
 
 ## Configuration
 
-Brands, target BTU, and which retailers to skip are all plain data in `config.json` at the repo
-root, e.g.
+Brands, target BTU, which retailers to skip, and the failure alert threshold are all plain
+data in `config.json` at the repo root, e.g.
 
 ```json
 {
   "target_btu": 14000,
   "brands": ["meaco", "black+decker"],
-  "ignored_retailers": ["amazon"]
+  "ignored_retailers": ["amazon"],
+  "failure_alert_threshold": 5
 }
 ```
 
@@ -38,6 +39,9 @@ List a name there to stop checking that website (e.g. it's consistently failing 
 Otherwise, every retailer in `RETAILER_CLASSES_BY_NAME`
 (`watcher/main.py`) runs by default, so a newly-added retailer module is included automatically.
 
+`failure_alert_threshold` is the number of consecutive failed checks a retailer needs before
+you get a "this retailer looks broken" email.
+
 
 
 ## Adjusting other things
@@ -46,7 +50,6 @@ Otherwise, every retailer in `RETAILER_CLASSES_BY_NAME`
 - **Add a brand-new retailer**: add its module in `watcher/retailers/` and register it in
   `RETAILER_CLASSES_BY_NAME` in `watcher/main.py` — it starts running automatically, no
   `config.json` change needed.
-- **Failure-alert threshold**: edit `FAILURE_ALERT_THRESHOLD` in `watcher/config.py`.
 
 ## Local development
 
