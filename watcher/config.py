@@ -1,9 +1,9 @@
 """Shared configuration: which products count as a match, which retailers to
 skip, and alert/email settings.
 
-Brands, target BTU, and ignored retailers are user-editable via config.json at
-the repo root, rather than in this file, so changing them doesn't require
-touching Python code.
+Brands, target BTU, ignored retailers, and the failure alert threshold are user-editable
+via config.json at the repo root, rather than in this file, so changing them doesn't
+require touching Python code.
 """
 
 import json
@@ -12,8 +12,6 @@ import re
 from pathlib import Path
 
 CONFIG_PATH = Path(__file__).resolve().parent.parent / "config.json"
-
-FAILURE_ALERT_THRESHOLD = 5
 
 GMAIL_ADDRESS = os.environ.get("GMAIL_ADDRESS", "")
 GMAIL_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "")
@@ -41,6 +39,8 @@ ACCEPTED_BRANDS: list[str] = [brand.lower() for brand in _config["brands"]]
 # Retailers not listed here run by default, so a newly-added retailer module is
 # included automatically without needing a config.json change.
 IGNORED_RETAILERS: list[str] = _config.get("ignored_retailers", [])
+
+FAILURE_ALERT_THRESHOLD: int = _config.get("failure_alert_threshold", 5)
 
 
 def matches_target_product(title: str) -> bool:
