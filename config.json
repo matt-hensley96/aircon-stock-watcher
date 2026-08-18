@@ -1,0 +1,5 @@
+{
+  "target_btu": 14000,
+  "brands": ["meaco", "black+decker", "black & decker", "delonghi"],
+  "ignored_retailers": []
+}
