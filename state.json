@@ -28,7 +28,7 @@
     },
     "John Lewis": {
       "alerted": false,
-      "consecutive_failures": 1
+      "consecutive_failures": 2
     },
     "Meaco": {
       "alerted": false,
