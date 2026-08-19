@@ -3,6 +3,8 @@ endpoint with a real 'available' boolean per product, so no HTML parsing is
 needed here.
 """
 
+from urllib.parse import urlsplit, urlunsplit
+
 import requests
 
 from .. import config
@@ -43,6 +45,17 @@ def _to_product_status(item: dict) -> ProductStatus:
     return ProductStatus(
         retailer=MeacoRetailer.name,
         title=item["title"],
-        url=f"https://meaco.com{item['url']}",
+        url=_strip_query_string(f"https://meaco.com{item['url']}"),
         in_stock=bool(item.get("available")),
     )
+
+
+def _strip_query_string(url: str) -> str:
+    """Meaco's search results include Shopify predictive-search tracking params
+    (e.g. _pos, _psq, _psid, _ss) that change on every request, so keeping them
+    in the URL would make each search look like a different product to state.py.
+    """
+
+    parts = urlsplit(url)
+
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))

@@ -29,7 +29,8 @@ data in `config.json` at the repo root, e.g.
   "target_btu": 14000,
   "brands": ["meaco", "black+decker"],
   "ignored_retailers": ["amazon"],
-  "failure_alert_threshold": 5
+  "failure_alert_threshold": 5,
+  "failure_reminder_days": 7
 }
 ```
 
@@ -40,8 +41,11 @@ Otherwise, every retailer in `RETAILER_CLASSES_BY_NAME`
 (`watcher/main.py`) runs by default, so a newly-added retailer module is included automatically.
 
 `failure_alert_threshold` is the number of consecutive failed checks a retailer needs before
-you get a "this retailer looks broken" email.
+you get a "this retailer looks broken" email. That email is sent only to `GMAIL_ADDRESS`
+(the developer).
 
+`failure_reminder_days` is roughly how long a retailer can stay broken before you get a
+reminder email that it's still broken, after the initial "looks broken" alert.
 
 
 ## Adjusting other things

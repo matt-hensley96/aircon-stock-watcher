@@ -2,5 +2,6 @@
   "target_btu": 14000,
   "brands": ["meaco", "black+decker", "black & decker", "delonghi"],
   "ignored_retailers": [],
-  "failure_alert_threshold": 5
+  "failure_alert_threshold": 5,
+  "failure_reminder_days": 7
 }
