@@ -28,6 +28,10 @@
       "in_stock": false,
       "title": "Cirro+\u00ae 14000 BTU Super Quiet Inverter Smart Portable Air Conditioner & Heater"
     },
+    "Meaco|https://meaco.com/products/meaco-cirro-14000-btu-super-quiet-inverter-smart-portable-air-conditioner-heater?_pos=1&_psq=14000&_psid=fa77f65a3&_ss=e": {
+      "in_stock": false,
+      "title": "Cirro+\u00ae 14000 BTU Super Quiet Inverter Smart Portable Air Conditioner & Heater"
+    },
     "Meaco|https://meaco.com/products/meaco-cirro-14000-btu-super-quiet-inverter-smart-portable-air-conditioner?_pos=2&_psq=14000&_psid=0c3e6927c&_ss=e": {
       "in_stock": false,
       "title": "Cirro+\u00ae 14000 BTU Super Quiet Inverter Smart Portable Air Conditioner - Cooling Only"
@@ -55,12 +59,16 @@
     "Meaco|https://meaco.com/products/meaco-cirro-14000-btu-super-quiet-inverter-smart-portable-air-conditioner?_pos=2&_psq=14000&_psid=c0111c2b0&_ss=e": {
       "in_stock": false,
       "title": "Cirro+\u00ae 14000 BTU Super Quiet Inverter Smart Portable Air Conditioner - Cooling Only"
+    },
+    "Meaco|https://meaco.com/products/meaco-cirro-14000-btu-super-quiet-inverter-smart-portable-air-conditioner?_pos=2&_psq=14000&_psid=fa77f65a3&_ss=e": {
+      "in_stock": false,
+      "title": "Cirro+\u00ae 14000 BTU Super Quiet Inverter Smart Portable Air Conditioner - Cooling Only"
     }
   },
   "retailer_failures": {
     "Amazon UK": {
       "alerted": false,
-      "consecutive_failures": 0
+      "consecutive_failures": 1
     },
     "Argos": {
       "alerted": false,
@@ -76,7 +84,7 @@
     },
     "John Lewis": {
       "alerted": true,
-      "consecutive_failures": 12
+      "consecutive_failures": 13
     },
     "Meaco": {
       "alerted": false,
