@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from watcher.config import FAILURE_ALERT_THRESHOLD
+from watcher.config import FAILURE_ALERT_THRESHOLD, FAILURE_REMINDER_INTERVAL
 from watcher.retailers.base import ProductStatus
 from watcher.state import load_state, record_failure, record_success, update_products_and_get_restocks
 
@@ -61,6 +61,28 @@ def test_given_failures_reach_threshold_when_recording_failure_then_alert_trigge
     alerts = [record_failure(state, "Amazon UK") for _ in range(FAILURE_ALERT_THRESHOLD + 2)]
 
     assert alerts.count(True) == 1
+
+
+def test_given_retailer_still_failing_when_reminder_interval_not_yet_reached_then_no_further_alert():
+    state = load_state_for_test()
+    calls_before_reminder_would_be_due = FAILURE_ALERT_THRESHOLD + FAILURE_REMINDER_INTERVAL - 1
+
+    for _ in range(calls_before_reminder_would_be_due):
+        should_alert = record_failure(state, "Amazon UK")
+
+    assert should_alert is False
+
+
+def test_given_retailer_still_failing_when_reminder_interval_reached_then_alert_triggered_again():
+    state = load_state_for_test()
+    calls_up_to_reminder = FAILURE_ALERT_THRESHOLD + FAILURE_REMINDER_INTERVAL
+
+    for _ in range(calls_up_to_reminder - 1):
+        record_failure(state, "Amazon UK")
+
+    should_alert = record_failure(state, "Amazon UK")
+
+    assert should_alert is True
 
 
 def test_given_retailer_had_failures_when_recording_success_then_failure_count_resets():
