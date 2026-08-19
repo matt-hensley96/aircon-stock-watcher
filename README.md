@@ -40,7 +40,9 @@ Otherwise, every retailer in `RETAILER_CLASSES_BY_NAME`
 (`watcher/main.py`) runs by default, so a newly-added retailer module is included automatically.
 
 `failure_alert_threshold` is the number of consecutive failed checks a retailer needs before
-you get a "this retailer looks broken" email.
+you get a "this retailer looks broken" email. 
+That email is sent only to `GMAIL_ADDRESS`
+(the developer).
 
 
 
