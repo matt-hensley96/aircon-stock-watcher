@@ -27,7 +27,7 @@
       "failures_at_last_alert": null
     },
     "John Lewis": {
-      "consecutive_failures": 76,
+      "consecutive_failures": 77,
       "failures_at_last_alert": 5
     },
     "Meaco": {
@@ -39,7 +39,7 @@
       "failures_at_last_alert": null
     },
     "Toolstation": {
-      "consecutive_failures": 1,
+      "consecutive_failures": 0,
       "failures_at_last_alert": null
     }
   }
