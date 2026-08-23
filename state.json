@@ -11,8 +11,8 @@
   },
   "retailer_failures": {
     "Amazon UK": {
-      "consecutive_failures": 4,
-      "failures_at_last_alert": null
+      "consecutive_failures": 5,
+      "failures_at_last_alert": 5
     },
     "Argos": {
       "consecutive_failures": 0,
@@ -27,7 +27,7 @@
       "failures_at_last_alert": null
     },
     "John Lewis": {
-      "consecutive_failures": 139,
+      "consecutive_failures": 140,
       "failures_at_last_alert": 5
     },
     "Meaco": {
