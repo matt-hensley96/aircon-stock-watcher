@@ -27,7 +27,7 @@
       "failures_at_last_alert": null
     },
     "John Lewis": {
-      "consecutive_failures": 166,
+      "consecutive_failures": 167,
       "failures_at_last_alert": 5
     },
     "Meaco": {
