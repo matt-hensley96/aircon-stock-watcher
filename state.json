@@ -19,7 +19,7 @@
       "failures_at_last_alert": null
     },
     "B&Q": {
-      "consecutive_failures": 1,
+      "consecutive_failures": 0,
       "failures_at_last_alert": null
     },
     "Currys": {
@@ -27,7 +27,7 @@
       "failures_at_last_alert": null
     },
     "John Lewis": {
-      "consecutive_failures": 246,
+      "consecutive_failures": 247,
       "failures_at_last_alert": 5
     },
     "Meaco": {
