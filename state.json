@@ -15,7 +15,7 @@
       "failures_at_last_alert": null
     },
     "Argos": {
-      "consecutive_failures": 1,
+      "consecutive_failures": 0,
       "failures_at_last_alert": null
     },
     "B&Q": {
@@ -27,7 +27,7 @@
       "failures_at_last_alert": null
     },
     "John Lewis": {
-      "consecutive_failures": 695,
+      "consecutive_failures": 696,
       "failures_at_last_alert": 677
     },
     "Meaco": {
